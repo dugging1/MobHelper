@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobHelper", "MobHelper\MobHelper.csproj", "{CBF19883-802C-4015-BDB5-294BAC5CB85B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4DBFE2CF-45E4-4594-8E6A-5EBC2EEF85AE} = {4DBFE2CF-45E4-4594-8E6A-5EBC2EEF85AE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaoMobs", "TaoMobs\TaoMobs.csproj", "{3B7CD774-1381-44DD-9E53-3F0ED11E09B7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CBF19883-802C-4015-BDB5-294BAC5CB85B} = {CBF19883-802C-4015-BDB5-294BAC5CB85B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomTabControl", "CustomTabControl\CustomTabControl.csproj", "{4DBFE2CF-45E4-4594-8E6A-5EBC2EEF85AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobHelperDemo", "MobHelperDemo\MobHelperDemo.csproj", "{296F0BAF-9006-4A99-91FF-19DBD4DB25A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CBF19883-802C-4015-BDB5-294BAC5CB85B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF19883-802C-4015-BDB5-294BAC5CB85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF19883-802C-4015-BDB5-294BAC5CB85B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CBF19883-802C-4015-BDB5-294BAC5CB85B}.Debug|x86.Build.0 = Debug|Any CPU
+		{CBF19883-802C-4015-BDB5-294BAC5CB85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF19883-802C-4015-BDB5-294BAC5CB85B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF19883-802C-4015-BDB5-294BAC5CB85B}.Release|x86.ActiveCfg = Release|Any CPU
+		{CBF19883-802C-4015-BDB5-294BAC5CB85B}.Release|x86.Build.0 = Release|Any CPU
+		{3B7CD774-1381-44DD-9E53-3F0ED11E09B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B7CD774-1381-44DD-9E53-3F0ED11E09B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B7CD774-1381-44DD-9E53-3F0ED11E09B7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3B7CD774-1381-44DD-9E53-3F0ED11E09B7}.Debug|x86.Build.0 = Debug|Any CPU
+		{3B7CD774-1381-44DD-9E53-3F0ED11E09B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B7CD774-1381-44DD-9E53-3F0ED11E09B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B7CD774-1381-44DD-9E53-3F0ED11E09B7}.Release|x86.ActiveCfg = Release|Any CPU
+		{3B7CD774-1381-44DD-9E53-3F0ED11E09B7}.Release|x86.Build.0 = Release|Any CPU
+		{4DBFE2CF-45E4-4594-8E6A-5EBC2EEF85AE}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{4DBFE2CF-45E4-4594-8E6A-5EBC2EEF85AE}.Debug|Any CPU.Build.0 = Debug|x86
+		{4DBFE2CF-45E4-4594-8E6A-5EBC2EEF85AE}.Debug|x86.ActiveCfg = Debug|x86
+		{4DBFE2CF-45E4-4594-8E6A-5EBC2EEF85AE}.Debug|x86.Build.0 = Debug|x86
+		{4DBFE2CF-45E4-4594-8E6A-5EBC2EEF85AE}.Release|Any CPU.ActiveCfg = Release|x86
+		{4DBFE2CF-45E4-4594-8E6A-5EBC2EEF85AE}.Release|Any CPU.Build.0 = Release|x86
+		{4DBFE2CF-45E4-4594-8E6A-5EBC2EEF85AE}.Release|x86.ActiveCfg = Release|x86
+		{4DBFE2CF-45E4-4594-8E6A-5EBC2EEF85AE}.Release|x86.Build.0 = Release|x86
+		{296F0BAF-9006-4A99-91FF-19DBD4DB25A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{296F0BAF-9006-4A99-91FF-19DBD4DB25A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{296F0BAF-9006-4A99-91FF-19DBD4DB25A7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{296F0BAF-9006-4A99-91FF-19DBD4DB25A7}.Debug|x86.Build.0 = Debug|Any CPU
+		{296F0BAF-9006-4A99-91FF-19DBD4DB25A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{296F0BAF-9006-4A99-91FF-19DBD4DB25A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{296F0BAF-9006-4A99-91FF-19DBD4DB25A7}.Release|x86.ActiveCfg = Release|Any CPU
+		{296F0BAF-9006-4A99-91FF-19DBD4DB25A7}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28AE0220-8AFC-4A9A-B03E-40FB0735E66D}
+	EndGlobalSection
+EndGlobal
