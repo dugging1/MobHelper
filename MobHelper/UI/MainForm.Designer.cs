@@ -35,9 +35,9 @@
 			this.InitTrack = new System.Windows.Forms.TabPage();
 			this.InitTrackSPanel = new System.Windows.Forms.SplitContainer();
 			this.MobTrack = new System.Windows.Forms.TabPage();
-			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.MobRollerSplitLR = new System.Windows.Forms.SplitContainer();
 			this.MobPanelDock = new System.Windows.Forms.FlowLayoutPanel();
-			this.MobBtnPanel = new System.Windows.Forms.FlowLayoutPanel();
+			this.MobRollerSplitBtnsTB = new System.Windows.Forms.SplitContainer();
 			((System.ComponentModel.ISupportInitialize)(this.InitVal)).BeginInit();
 			this.Tabs.SuspendLayout();
 			this.InitTrack.SuspendLayout();
@@ -45,23 +45,25 @@
 			this.InitTrackSPanel.Panel2.SuspendLayout();
 			this.InitTrackSPanel.SuspendLayout();
 			this.MobTrack.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-			this.splitContainer1.Panel1.SuspendLayout();
-			this.splitContainer1.Panel2.SuspendLayout();
-			this.splitContainer1.SuspendLayout();
-			this.MobBtnPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.MobRollerSplitLR)).BeginInit();
+			this.MobRollerSplitLR.Panel1.SuspendLayout();
+			this.MobRollerSplitLR.Panel2.SuspendLayout();
+			this.MobRollerSplitLR.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.MobRollerSplitBtnsTB)).BeginInit();
+			this.MobRollerSplitBtnsTB.Panel1.SuspendLayout();
+			this.MobRollerSplitBtnsTB.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// ClearMobs
 			// 
-			this.ClearMobs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
 			this.ClearMobs.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.ClearMobs.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.ClearMobs.FlatAppearance.BorderSize = 0;
 			this.ClearMobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.ClearMobs.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.ClearMobs.Location = new System.Drawing.Point(3, 3);
+			this.ClearMobs.Location = new System.Drawing.Point(0, 0);
 			this.ClearMobs.Name = "ClearMobs";
-			this.ClearMobs.Size = new System.Drawing.Size(134, 23);
+			this.ClearMobs.Size = new System.Drawing.Size(191, 33);
 			this.ClearMobs.TabIndex = 1;
 			this.ClearMobs.Text = "Clear Mobs";
 			this.ClearMobs.UseVisualStyleBackColor = false;
@@ -220,7 +222,7 @@
 			// MobTrack
 			// 
 			this.MobTrack.BackColor = System.Drawing.Color.Black;
-			this.MobTrack.Controls.Add(this.splitContainer1);
+			this.MobTrack.Controls.Add(this.MobRollerSplitLR);
 			this.MobTrack.Location = new System.Drawing.Point(4, 23);
 			this.MobTrack.Name = "MobTrack";
 			this.MobTrack.Padding = new System.Windows.Forms.Padding(3);
@@ -228,22 +230,22 @@
 			this.MobTrack.TabIndex = 1;
 			this.MobTrack.Text = "Mob Roller";
 			// 
-			// splitContainer1
+			// MobRollerSplitLR
 			// 
-			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.splitContainer1.Location = new System.Drawing.Point(3, 3);
-			this.splitContainer1.Name = "splitContainer1";
+			this.MobRollerSplitLR.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.MobRollerSplitLR.Location = new System.Drawing.Point(3, 3);
+			this.MobRollerSplitLR.Name = "MobRollerSplitLR";
 			// 
-			// splitContainer1.Panel1
+			// MobRollerSplitLR.Panel1
 			// 
-			this.splitContainer1.Panel1.Controls.Add(this.MobPanelDock);
+			this.MobRollerSplitLR.Panel1.Controls.Add(this.MobPanelDock);
 			// 
-			// splitContainer1.Panel2
+			// MobRollerSplitLR.Panel2
 			// 
-			this.splitContainer1.Panel2.Controls.Add(this.MobBtnPanel);
-			this.splitContainer1.Size = new System.Drawing.Size(965, 550);
-			this.splitContainer1.SplitterDistance = 816;
-			this.splitContainer1.TabIndex = 0;
+			this.MobRollerSplitLR.Panel2.Controls.Add(this.MobRollerSplitBtnsTB);
+			this.MobRollerSplitLR.Size = new System.Drawing.Size(965, 550);
+			this.MobRollerSplitLR.SplitterDistance = 770;
+			this.MobRollerSplitLR.TabIndex = 0;
 			// 
 			// MobPanelDock
 			// 
@@ -251,18 +253,22 @@
 			this.MobPanelDock.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.MobPanelDock.Location = new System.Drawing.Point(0, 0);
 			this.MobPanelDock.Name = "MobPanelDock";
-			this.MobPanelDock.Size = new System.Drawing.Size(816, 550);
+			this.MobPanelDock.Size = new System.Drawing.Size(770, 550);
 			this.MobPanelDock.TabIndex = 1;
 			// 
-			// MobBtnPanel
+			// MobRollerSplitBtnsTB
 			// 
-			this.MobBtnPanel.AutoScroll = true;
-			this.MobBtnPanel.Controls.Add(this.ClearMobs);
-			this.MobBtnPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.MobBtnPanel.Location = new System.Drawing.Point(0, 0);
-			this.MobBtnPanel.Name = "MobBtnPanel";
-			this.MobBtnPanel.Size = new System.Drawing.Size(145, 550);
-			this.MobBtnPanel.TabIndex = 1;
+			this.MobRollerSplitBtnsTB.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.MobRollerSplitBtnsTB.Location = new System.Drawing.Point(0, 0);
+			this.MobRollerSplitBtnsTB.Name = "MobRollerSplitBtnsTB";
+			this.MobRollerSplitBtnsTB.Orientation = System.Windows.Forms.Orientation.Horizontal;
+			// 
+			// MobRollerSplitBtnsTB.Panel1
+			// 
+			this.MobRollerSplitBtnsTB.Panel1.Controls.Add(this.ClearMobs);
+			this.MobRollerSplitBtnsTB.Size = new System.Drawing.Size(191, 550);
+			this.MobRollerSplitBtnsTB.SplitterDistance = 33;
+			this.MobRollerSplitBtnsTB.TabIndex = 0;
 			// 
 			// MainForm
 			// 
@@ -287,11 +293,13 @@
 			((System.ComponentModel.ISupportInitialize)(this.InitTrackSPanel)).EndInit();
 			this.InitTrackSPanel.ResumeLayout(false);
 			this.MobTrack.ResumeLayout(false);
-			this.splitContainer1.Panel1.ResumeLayout(false);
-			this.splitContainer1.Panel2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-			this.splitContainer1.ResumeLayout(false);
-			this.MobBtnPanel.ResumeLayout(false);
+			this.MobRollerSplitLR.Panel1.ResumeLayout(false);
+			this.MobRollerSplitLR.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.MobRollerSplitLR)).EndInit();
+			this.MobRollerSplitLR.ResumeLayout(false);
+			this.MobRollerSplitBtnsTB.Panel1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.MobRollerSplitBtnsTB)).EndInit();
+			this.MobRollerSplitBtnsTB.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -309,9 +317,9 @@
 		private System.Windows.Forms.TabPage InitTrack;
 		private System.Windows.Forms.TabPage MobTrack;
 		private System.Windows.Forms.SplitContainer InitTrackSPanel;
-		private System.Windows.Forms.SplitContainer splitContainer1;
+		private System.Windows.Forms.SplitContainer MobRollerSplitLR;
 		private System.Windows.Forms.FlowLayoutPanel MobPanelDock;
-		private System.Windows.Forms.FlowLayoutPanel MobBtnPanel;
+		private System.Windows.Forms.SplitContainer MobRollerSplitBtnsTB;
 	}
 }
 
