@@ -9,9 +9,14 @@ namespace TaoMobs {
 	class DreamBlueButterfly : TaoMob {
 		protected override IMobStatBlock Stats {
 			get {
-				return new MobStats().New(new int[7] { 12+MobRollHelper.roll(1,4), 18+MobRollHelper.roll(2,4),
-														16+MobRollHelper.roll(2,4), 16+MobRollHelper.roll(2,4),
-														16+MobRollHelper.roll(1,4), 16+MobRollHelper.roll(1,4), 0}, "Dream Blue Butterfly");
+				return new MobStats().New(new int[7] {
+					12+MobRollHelper.roll(1,4),
+					18+MobRollHelper.roll(2,4),
+					16+MobRollHelper.roll(2,4),
+					16+MobRollHelper.roll(2,4),
+					16+MobRollHelper.roll(1,4),
+					16+MobRollHelper.roll(1,4),
+					0 }, "Dream Blue Butterfly");
 			}
 		}
 
@@ -28,3 +33,11 @@ namespace TaoMobs {
 		}
 	}
 }
+
+/*
+ * Encounters: [1]
+ * 
+ * Attacks: 
+ * Illusion (A): Int. roll off with target. On a success, can change target's perception of env.
+ * Damaging Illusion (A): Can deal [3d6+Int]  to a target that is under the influence of 'Illusion'.
+ */

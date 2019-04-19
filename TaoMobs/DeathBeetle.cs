@@ -29,6 +29,13 @@ namespace MobHelper.Mobs {
     }
 }
 
+/*
+ * Encounters: [6+2d4]
+ * 
+ * Attacks:
+ * Bite: [1d4+Str.]
+ * /
+
 /* trbp.
  * Stats: STR DEX INT WIS CON CHR 0
  * 

@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using MobHelper.Mobs;
+using TaoHelper.UI;
 
 namespace MobHelper.UI {
 	public partial class MainForm : Form {
@@ -22,11 +23,16 @@ namespace MobHelper.UI {
 		public Color InitiativeBackColour { get; set; }
 		public Color InitiativeForeColour { get; set; }
 
+		MobRollerBtnPanel MobBtnPanel = new MobRollerBtnPanel();
+
 		public MainForm() {
 			InitializeComponent();
 			InitTrackPanel.Parent = InitTrackSPanel.Panel1;
 			InitTrackPanel.Dock = DockStyle.Fill;
 			InitTrackPanel.AutoScroll = true;
+
+			MobBtnPanel.Parent = MobRollerSplitBtnsTB.Panel2;
+			MobBtnPanel.Dock = DockStyle.Fill;
 
 			MobBtnBackColour = SystemColors.ControlDarkDark;
 			MobBtnTextColour = SystemColors.ControlLight;

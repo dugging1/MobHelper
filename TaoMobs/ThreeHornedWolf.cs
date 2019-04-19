@@ -9,8 +9,14 @@ namespace MobHelper.Mobs {
 	class ThreeHornedWolf : TaoMob {
 		protected override IMobStatBlock Stats {
 			get {
-				return new MobStats().New(new int[7] { 6+MobRollHelper.roll(2, 4), 15+MobRollHelper.roll(2, 6), 4+MobRollHelper.roll(1, 4),
-					6+MobRollHelper.roll(2, 4), 10+MobRollHelper.roll(1, 6), 2+MobRollHelper.roll(1, 4), 0 }, "Threehorned Wolf");
+				return new MobStats().New(new int[7] {
+					6+MobRollHelper.roll(2, 4),
+					15+MobRollHelper.roll(2, 6),
+					4+MobRollHelper.roll(1, 4),
+					6+MobRollHelper.roll(2, 4),
+					10+MobRollHelper.roll(1, 6),
+					2+MobRollHelper.roll(1, 4),
+					0 }, "Threehorned Wolf");
 			}
 		}
 
