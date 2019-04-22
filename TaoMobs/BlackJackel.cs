@@ -3,28 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MobHelper.Mobs;
+using MobHelper.Model;
 
-namespace MobHelper.Mobs {
+namespace TaoMobs {
     class BlackJackel : TaoMob {
-        protected override IMobStatBlock Stats {
-            get {
-                return new MobStats().New(new int[7] {
-                    16+MobRollHelper.roll(2, 4),    //STR
-                    11+MobRollHelper.roll(1, 6),     //DEX
-                    6+MobRollHelper.roll(1, 4)/2,   //INT
-					6+MobRollHelper.roll(1, 4)/2,   //WIS
-                    10+MobRollHelper.roll(2, 4),     //CON
-                    MobRollHelper.roll(1, 4), 0 },  //CHR
-                    "Black Jackel");
-            }
-        }
-        protected override int startHP { get { return 30; } }
-        protected override int HPDice { get { return 6; } }
+		public BlackJackel():base() {
+			IStats s = (IStats)getComponent(typeof(IStats));
+			s.Strength = 16+MobRollHelper.roll(2, 4);
+			s.Dexterity = 11+MobRollHelper.roll(1, 6);
+			s.Intelligence = 6+MobRollHelper.roll(1, 4)/2;
+			s.Wisdom = 6+MobRollHelper.roll(1, 4)/2;
+			s.Constitution = 10+MobRollHelper.roll(2, 4);
+			s.Charisma = MobRollHelper.roll(1, 4);
+			s.Speed = 30;
+			s.AC = 13+(s.Dexterity-10)/2;
+			s.HP = MobRollHelper.addHp(this, startHP, HPDice, 1);
+		}
 
-        public override int getAC(IMobStatBlock ms) {
-            return 13+(ms.Stats[1]-10)/2;
-        }
+		public override string Name {
+			get { return "Black Jackel"; }
+		}
+
+		protected int startHP { get { return 30; } }
+        protected int HPDice { get { return 6; } }
     }
 }
 

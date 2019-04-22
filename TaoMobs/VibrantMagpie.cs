@@ -3,29 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MobHelper.Mobs;
+using MobHelper.Model;
 
-namespace MobHelper.Mobs {
+namespace TaoMobs {
     class VibrantMagpie : TaoMob {
-        protected override IMobStatBlock Stats {
-            get {
-                return new MobStats().New(new int[7] {
-                    10+MobRollHelper.roll(2, 4),    //STR
-                    10+MobRollHelper.roll(2, 6),     //DEX
-                    4+MobRollHelper.roll(1, 4)/2,   //INT
-					2+MobRollHelper.roll(1, 4)/2,   //WIS
-                    6+MobRollHelper.roll(2, 4),     //CON
-                    MobRollHelper.roll(1, 6), 0 },  //CHR
-                    "Vibrant Magpie");
-            }
-        }
-        protected override int startHP { get { return 15; } }
-        protected override int HPDice { get { return 5; } }
-        protected override int NumHPDice { get { return 2; } }
+		public VibrantMagpie() : base() {
+			IStats s = (IStats)getComponent(typeof(IStats));
+			s.Strength = 10+MobRollHelper.roll(2, 4);
+			s.Dexterity = 10+MobRollHelper.roll(2, 6);
+			s.Intelligence = 4+MobRollHelper.roll(1, 4)/2;
+			s.Wisdom = 2+MobRollHelper.roll(1, 4)/2;
+			s.Constitution = 6+MobRollHelper.roll(2, 4);
+			s.Charisma = MobRollHelper.roll(1, 6);
+			s.Speed = 40;
+			s.AC = 14+(s.Dexterity-10)/2;
+			s.HP = MobRollHelper.addHp(this, startHP, HPDice, NumHPDice);
+		}
 
-        public override int getAC(IMobStatBlock ms) {
-            return 14+(ms.Stats[1]-10)/2;
-        }
+		public override string Name { get { return "Vibrant Magpie"; } }
+
+		protected int startHP { get { return 15; } }
+        protected int HPDice { get { return 5; } }
+        protected int NumHPDice { get { return 2; } }
     }
 }
 

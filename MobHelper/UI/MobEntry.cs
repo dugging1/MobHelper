@@ -1,28 +1,31 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
-using MobHelper.Mobs;
+using MobHelper.Model;
 
 namespace MobHelper.UI {
 	public partial class MobEntry : UserControl, IMobDisplayBlock {
-		public MobEntry(IMobStatBlock ms) {
+		public MobEntry(IMob ms) {
 			InitializeComponent();
-			Stats = ms;
+
+			IStats s = (IStats)ms.getComponent(typeof(IStats));
+			Mob = ms;
+
 			mobType.Text = ms.Name;
 			mobNumber.Text = ms.Number.ToString();
-			Str.Text = ms.Stats[0].ToString();
-			Dex.Text = ms.Stats[1].ToString();
-			Int.Text = ms.Stats[2].ToString();
-			Wis.Text = ms.Stats[3].ToString();
-			Con.Text = ms.Stats[4].ToString();
-			Cha.Text = ms.Stats[5].ToString();
-			Hp.Text = ms.Stats[6].ToString();
-			AC.Text = ms.Stats[7].ToString();
+			Str.Text = s.Strength.ToString();
+			Dex.Text = s.Dexterity.ToString();
+			Int.Text = s.Intelligence.ToString();
+			Wis.Text = s.Wisdom.ToString();
+			Con.Text = s.Constitution.ToString();
+			Cha.Text = s.Charisma.ToString();
+			Hp.Text = s.HP.ToString();
+			AC.Text = s.AC.ToString();
 		}
 
 		public Color BackColour { get; set; }
 
 		public Color ForeColour { get; set; }
 
-		public IMobStatBlock Stats { get; set; }
+		public IMob Mob { get; set; }
 	}
 }

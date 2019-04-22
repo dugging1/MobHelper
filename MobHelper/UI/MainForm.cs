@@ -4,12 +4,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using MobHelper.Mobs;
-using TaoHelper.UI;
+using MobHelper.Model;
 
 namespace MobHelper.UI {
 	public partial class MainForm : Form {
-		List<IMobStatBlock> rolledMobs = new List<IMobStatBlock>();
 		List<IMobDisplayBlock> mobPanels = new List<IMobDisplayBlock>();
 		List<InitiativeEntry> initiatives = new List<InitiativeEntry>();
 		InitiativePanel InitTrackPanel = new InitiativePanel();
@@ -43,9 +41,9 @@ namespace MobHelper.UI {
 		}
 
 		private void Form1_Load(object sender, EventArgs e) {
-			MobRollHelper.mobs = AppDomain.CurrentDomain.GetAssemblies().SelectMany(s => s.GetTypes()).Where(p => typeof(Mob).IsAssignableFrom(p) && p.IsClass && !p.IsAbstract);
+			MobRollHelper.mobs = AppDomain.CurrentDomain.GetAssemblies().SelectMany(s => s.GetTypes()).Where(p => typeof(IMob).IsAssignableFrom(p) && p.IsClass && !p.IsAbstract);
 			foreach (Type type in MobRollHelper.mobs) {
-				createMobBtn(((Mob)Activator.CreateInstance(type)).getMobStats(0).Name);
+				createMobBtn(((IMob)Activator.CreateInstance(type)).Name);
 			}
 			MobBtnPanel.Invalidate();
 		}
@@ -84,8 +82,8 @@ namespace MobHelper.UI {
 
 		private void addMobs_Click(object sender, EventArgs e) {
 			InitTrackPanel.Hide();
-			foreach (MobStats ms in rolledMobs) {
-				InitiativeEntry i = new InitiativeEntry(ms, removeInitiativeEntry);
+			foreach (IMobDisplayBlock ms in mobPanels) {
+				InitiativeEntry i = new InitiativeEntry(ms.Mob, removeInitiativeEntry);
 				i.ForeColor = InitiativeForeColour;
 				i.BackColor = InitiativeBackColour;
 				initiatives.Add(i);
@@ -115,7 +113,6 @@ namespace MobHelper.UI {
 			}
 
 			MobRollHelper.typeNumHighest = new Dictionary<string, int>();
-			rolledMobs = new List<IMobStatBlock>();
 			mobPanels = new List<IMobDisplayBlock>();
 			MobPanelDock.Show();
 		}
@@ -123,8 +120,7 @@ namespace MobHelper.UI {
 		private void MobCreationBtnCallback(object sender, EventArgs e) {
 			try {
 				Button b = (Button)sender;
-				IMobStatBlock ms = MobRollHelper.getMob(b.Text);
-				rolledMobs.Add(ms);
+				IMob ms = MobRollHelper.getMob(b.Text);
 				IMobDisplayBlock me = new MobEntry(ms) { BackColor = StatBackColour, ForeColor = StatForeColour, Parent = MobPanelDock };
 				mobPanels.Add(me);
 			} finally { }

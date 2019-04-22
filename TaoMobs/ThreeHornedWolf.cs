@@ -3,37 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MobHelper.Mobs;
+using MobHelper.Model;
 
-namespace MobHelper.Mobs {
+namespace TaoMobs {
 	class ThreeHornedWolf : TaoMob {
-		protected override IMobStatBlock Stats {
-			get {
-				return new MobStats().New(new int[7] {
-					6+MobRollHelper.roll(2, 4),
-					15+MobRollHelper.roll(2, 6),
-					4+MobRollHelper.roll(1, 4),
-					6+MobRollHelper.roll(2, 4),
-					10+MobRollHelper.roll(1, 6),
-					2+MobRollHelper.roll(1, 4),
-					0 }, "Threehorned Wolf");
-			}
+		public ThreeHornedWolf() : base() {
+			IStats s = (IStats)getComponent(typeof(IStats));
+			s.Strength = 6+MobRollHelper.roll(2, 4);
+			s.Dexterity = 15+MobRollHelper.roll(2, 6);
+			s.Intelligence = 4+MobRollHelper.roll(1, 4);
+			s.Wisdom = 6+MobRollHelper.roll(2, 4);
+			s.Constitution = 10+MobRollHelper.roll(1, 6);
+			s.Charisma = 2+MobRollHelper.roll(1, 4);
+			s.Speed = 40;
+			s.AC = 10+(s.Dexterity-10)/2;
+			s.HP = MobRollHelper.addHp(this, startHP, HPDice, 1);
 		}
 
-		protected override int startHP {
-			get {
-				return 45;
-			}
-		}
+		public override string Name { get { return "Three-Horned Wolf"; } }
 
-		protected override int HPDice {
-			get {
-				return 8;
-			}
-		}
+		protected int startHP { get { return 45; } }
 
-		public override int getAC(IMobStatBlock ms) {
-			return 10+(ms.Stats[1]-10)/2;
-		}
+		protected int HPDice { get { return 8; } }
 	}
 }

@@ -1,5 +1,5 @@
 ﻿using MobHelper;
-using MobHelper.Mobs;
+using MobHelper.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +7,25 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MobHelperDemo {
-	class Thug : Mob {
-		public int getAC(IMobStatBlock ms) {
-			return 11;
+	class Thug : IMob {
+		public Thug() {
+			//Int[9] => {Str, Dex, Int, Wis, Con, Cha, Speed, Hp, AC}
+			MobStats s = new MobStats(new int[9] { 15, 11, 10, 10, 14, 11, 30, MobRollHelper.roll(5, 8)+10, 11 });
 		}
 
-		//Int[8] => {Str, Dex, Int, Wis, Con, Cha, Hp, AC}
-		public IMobStatBlock getMobStats(int number) {
-			return new MobStats().New(new int[8] { 15, 11, 10, 10, 14, 11, MobRollHelper.roll(5, 8)+10, 11 }, "Thug", number);
+		public string Name { get { return "Thug"; } }
+
+		public int Number { get; set; }
+
+		public HashSet<IComponent> Components { get; }
+
+		public IComponent getComponent(Type t) {
+			foreach (IComponent c in Components) {
+				if (t.GetType().IsAssignableFrom(c.GetType()))
+					return c;
+			}
+			throw new KeyNotFoundException("Component not found.");
 		}
+
 	}
 }

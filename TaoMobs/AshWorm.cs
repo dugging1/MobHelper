@@ -3,26 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MobHelper.Mobs;
+using MobHelper.Model;
 
-namespace MobHelper.Mobs {
+namespace TaoMobs {
 	class AshWorm : TaoMob {
-		protected override IMobStatBlock Stats { get {
-				return new MobStats().New(new int[7] {
-                    45+MobRollHelper.roll(2, 10),
-                    45+MobRollHelper.roll(2, 6),
-                    25+MobRollHelper.roll(1, 4),
-					20+MobRollHelper.roll(1, 4),
-                    30+MobRollHelper.roll(2, 4),
-                    16+MobRollHelper.roll(1, 4), 0 }, "Ash Worm");
-			} }
-		protected override int startHP { get { return 150; } }
-		protected override int HPDice { get { return 10; } }
-        protected override int NumHPDice { get { return 5; } }
-
-        public override int getAC(IMobStatBlock ms) {
-			return 23+(ms.Stats[1]-10)/2;
+		public AshWorm():base() {
+			IStats s = (IStats)getComponent(typeof(IStats));
+			s.Strength = 45+MobRollHelper.roll(2, 10);
+			s.Dexterity = 45+MobRollHelper.roll(2, 6);
+			s.Intelligence = 25+MobRollHelper.roll(1, 4);
+			s.Wisdom = 20+MobRollHelper.roll(1, 4);
+			s.Constitution = 30+MobRollHelper.roll(2, 4);
+			s.Charisma = 16+MobRollHelper.roll(1, 4);
+			s.Speed = 40;
+			s.AC = 23+(s.Dexterity-10)/2;
+			s.HP = MobRollHelper.addHp(this, startHP, HPDice, NumHPDice);
 		}
+
+		public override string Name { get { return "Magma Worm"; } }
+
+		protected int startHP { get { return 150; } }
+		protected int HPDice { get { return 10; } }
+        protected int NumHPDice { get { return 5; } }
 	}
 }
 

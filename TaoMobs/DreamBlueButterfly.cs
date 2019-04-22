@@ -1,4 +1,4 @@
-﻿using MobHelper.Mobs;
+﻿using MobHelper.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,29 +7,29 @@ using System.Threading.Tasks;
 
 namespace TaoMobs {
 	class DreamBlueButterfly : TaoMob {
-		protected override IMobStatBlock Stats {
-			get {
-				return new MobStats().New(new int[7] {
-					12+MobRollHelper.roll(1,4),
-					18+MobRollHelper.roll(2,4),
-					16+MobRollHelper.roll(2,4),
-					16+MobRollHelper.roll(2,4),
-					16+MobRollHelper.roll(1,4),
-					16+MobRollHelper.roll(1,4),
-					0 }, "Dream Blue Butterfly");
-			}
+		public DreamBlueButterfly() : base() {
+			IStats s = (IStats)getComponent(typeof(IStats));
+			s.Strength = 12+MobRollHelper.roll(1, 4);
+			s.Dexterity = 18+MobRollHelper.roll(2, 4);
+			s.Intelligence = 16+MobRollHelper.roll(2, 4);
+			s.Wisdom = 16+MobRollHelper.roll(2, 4);
+			s.Constitution = 16+MobRollHelper.roll(1, 4);
+			s.Charisma = 16+MobRollHelper.roll(1, 4);
+			s.Speed = 40;
+			s.AC = 12+(s.Dexterity-10)/2;
+			s.HP = MobRollHelper.addHp(this, startHP, HPDice, 1);
 		}
 
-		protected override int startHP {
+		public override string Name {
+			get { return "Dream Blue Butterfly"; }
+		}
+
+		protected int startHP {
 			get { return 12; }
 		}
 
-		protected override int HPDice {
+		protected int HPDice {
 			get { return 8; }
-		}
-
-		public override int getAC(IMobStatBlock ms) {
-			return 12+(ms.Stats[1]-10)/2;
 		}
 	}
 }

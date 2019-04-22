@@ -3,29 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MobHelper.Mobs;
+using MobHelper.Model;
 
-namespace MobHelper.Mobs {
+namespace TaoMobs {
     class WingedBear : TaoMob {
-        protected override IMobStatBlock Stats {
-            get {
-                return new MobStats().New(new int[7] {
-                    16+MobRollHelper.roll(2, 3),    //STR
-                    8+MobRollHelper.roll(2, 4),     //DEX
-                    4+MobRollHelper.roll(1, 4)/2,   //INT
-					4+MobRollHelper.roll(1, 4)/2,   //WIS
-                    8+MobRollHelper.roll(1, 4),     //CON
-                    MobRollHelper.roll(1, 6), 0 },  //CHR
-                    "Winged Bear");
-            }
-        }
-        protected override int startHP { get { return 30; } }
-        protected override int HPDice { get { return 10; } }
-        protected override int NumHPDice { get { return 4; } }
+		public WingedBear() : base() {
+			IStats s = (IStats)getComponent(typeof(IStats));
+			s.Strength = 16+MobRollHelper.roll(2, 3);
+			s.Dexterity = 8+MobRollHelper.roll(2, 4);
+			s.Intelligence = 4+MobRollHelper.roll(1, 4)/2;
+			s.Wisdom = 4+MobRollHelper.roll(1, 4)/2;
+			s.Constitution = 8+MobRollHelper.roll(1, 4);
+			s.Charisma = MobRollHelper.roll(1, 6);
+			s.Speed = 30;
+			s.AC = 15+(s.Dexterity-10)/2;
+			s.HP = MobRollHelper.addHp(this, startHP, HPDice, NumHPDice);
+		}
 
-        public override int getAC(IMobStatBlock ms) {
-            return 15+(ms.Stats[1]-10)/2;
-        }
+		public override string Name {
+			get { return "Winged Bear"; }
+		}
+
+		protected int startHP { get { return 30; } }
+        protected int HPDice { get { return 10; } }
+        protected int NumHPDice { get { return 4; } }
     }
 }
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.Layout;
 
-namespace TaoHelper.UI {
+namespace MobHelper.UI {
 	public partial class MobRollerBtnPanel : Panel {
 		private MobRollerPanel layout;
 

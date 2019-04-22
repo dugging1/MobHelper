@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Windows.Forms;
-using MobHelper.Mobs;
+using MobHelper.Model;
 
 namespace MobHelper.UI {
 	public partial class InitiativeEntry : UserControl, IComparable {
 		public delegate void removeDelegate(InitiativeEntry i);
 		private removeDelegate remDel;
 
-		public InitiativeEntry(MobStats ms, removeDelegate rem) {
+		public InitiativeEntry(IMob ms, removeDelegate rem) {
+			IStats stats = (IStats)ms.getComponent(typeof(IStats));
+
 			InitializeComponent();
 			EntryName.Text = ms.Name + " " + ms.Number.ToString();
-			int initiative = MobRollHelper.roll(1, 20)+Convert.ToInt32(Math.Floor((ms.Stats[1]-10.0)/2.0));
+			int initiative = MobRollHelper.roll(1, 20)+Convert.ToInt32(Math.Floor((stats.Dexterity-10.0)/2.0));
 			EntryInitiative.Text = initiative.ToString();
 			remDel = rem;
 		}

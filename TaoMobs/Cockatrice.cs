@@ -3,31 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MobHelper.Mobs;
+using MobHelper.Model;
 
-namespace MobHelper.Mobs {
+namespace TaoMobs {
 	class Cockatrice : TaoMob {
-		protected override IMobStatBlock Stats {
-			get {
-				return new MobStats().New(new int[7] { 4+MobRollHelper.roll(1, 6), 8+MobRollHelper.roll(1, 6), MobRollHelper.roll(1, 4), 10+MobRollHelper.roll(1, 6),
-					10+MobRollHelper.roll(1, 4), 2+MobRollHelper.roll(1, 4), 0 }, "Cockatrice");
-			}
+		public Cockatrice() : base() {
+			IStats s = (IStats)getComponent(typeof(IStats));
+			s.Strength = 4+MobRollHelper.roll(1, 6);
+			s.Dexterity = 8+MobRollHelper.roll(1, 6);
+			s.Intelligence = MobRollHelper.roll(1, 4);
+			s.Wisdom = 10+MobRollHelper.roll(1, 6);
+			s.Constitution = 10+MobRollHelper.roll(1, 4);
+			s.Charisma = 2+MobRollHelper.roll(1, 4);
+			s.Speed = 30;
+			s.AC = 10+(s.Dexterity-10)/2;
+			s.HP = MobRollHelper.addHp(this, startHP, HPDice, 1);
 		}
 
-		protected override int startHP {
-			get {
-				return 22;
-			}
+		public override string Name {
+			get { return "Cockatrice"; }
 		}
 
-		protected override int HPDice {
-			get {
-				return 10;
-			}
+		protected int startHP {
+			get { return 22; }
 		}
 
-		public override int getAC(IMobStatBlock ms) {
-			return 10+(ms.Stats[1]-10)/2;
+		protected int HPDice {
+			get { return 10; }
 		}
 	}
 }

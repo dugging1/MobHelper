@@ -3,21 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MobHelper.Mobs;
+using MobHelper.Model;
 
-namespace MobHelper.Mobs {
+namespace TaoMobs {
 	class NightmareCrow:TaoMob {
-		protected override IMobStatBlock Stats { get {
-				return new MobStats().New(new int[7] {
-					10+MobRollHelper.roll(1, 4)/2, 10+MobRollHelper.roll(2, 4),
-					4+MobRollHelper.roll(1, 4)/2, 4+MobRollHelper.roll(1, 4)/2,
-					6+MobRollHelper.roll(1, 4), 1+MobRollHelper.roll(1, 4), 0 }, "Nightmare Crow");
-			} }
-		protected override int startHP { get { return 10; } }
-		protected override int HPDice { get { return 6; } }
-
-		public override int getAC(IMobStatBlock ms) {
-			return 12+(ms.Stats[1]-10)/2;
+		public NightmareCrow() : base() {
+			IStats s = (IStats)getComponent(typeof(IStats));
+			s.Strength = 10+MobRollHelper.roll(1, 4)/2;
+			s.Dexterity = 10+MobRollHelper.roll(2, 4);
+			s.Intelligence = 4+MobRollHelper.roll(1, 4)/2;
+			s.Wisdom = 4+MobRollHelper.roll(1, 4)/2;
+			s.Constitution = 6+MobRollHelper.roll(1, 4);
+			s.Charisma = 1+MobRollHelper.roll(1, 4);
+			s.Speed = 30;
+			s.AC = 12+(s.Dexterity-10)/2;
+			s.HP = MobRollHelper.addHp(this, startHP, HPDice, 1);
 		}
+
+		public override string Name { get { return "Nightmare Crow"; } }
+
+		protected int startHP { get { return 10; } }
+		protected int HPDice { get { return 6; } }
 	}
 }

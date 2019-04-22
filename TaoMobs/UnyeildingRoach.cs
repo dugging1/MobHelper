@@ -3,29 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MobHelper.Mobs;
+using MobHelper.Model;
 
-namespace MobHelper.Mobs {
+namespace TaoMobs {
     class UnyeildingRoach : TaoMob {
-        protected override IMobStatBlock Stats {
-            get {
-                return new MobStats().New(new int[7] {
-                    4+MobRollHelper.roll(2, 4),    //STR
-                    2+MobRollHelper.roll(1, 6),     //DEX
-                    4+MobRollHelper.roll(1, 4)/2,   //INT
-					4+MobRollHelper.roll(1, 4)/2,   //WIS
-                    2+MobRollHelper.roll(2, 4),     //CON
-                    MobRollHelper.roll(1, 4)-4, 0 },  //CHR
-                    "Unyeilding Roach");
-            }
-        }
-        protected override int startHP { get { return 2; } }
-        protected override int HPDice { get { return 6; } }
-        protected override int NumHPDice { get { return 10; } }
+		public UnyeildingRoach() : base() {
+			IStats s = (IStats)getComponent(typeof(IStats));
+			s.Strength = 4+MobRollHelper.roll(2, 4);
+			s.Dexterity = 2+MobRollHelper.roll(1, 6);
+			s.Intelligence = 4+MobRollHelper.roll(1, 4)/2;
+			s.Wisdom = 4+MobRollHelper.roll(1, 4)/2;
+			s.Constitution = 2+MobRollHelper.roll(2, 4);
+			s.Charisma = MobRollHelper.roll(1, 4)-4;
+			s.Speed = 30;
+			s.AC = 20+(s.Dexterity-10)/2;
+			s.HP = MobRollHelper.addHp(this, startHP, HPDice, NumHPDice);
+		}
 
-        public override int getAC(IMobStatBlock ms) {
-            return 20+(ms.Stats[1]-10)/2;
-        }
+		public override string Name {
+			get { return "Unyielding Roach"; }
+		}
+
+		protected int startHP { get { return 2; } }
+        protected int HPDice { get { return 6; } }
+        protected int NumHPDice { get { return 10; } }
     }
 }
 
