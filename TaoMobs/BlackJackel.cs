@@ -16,7 +16,7 @@ namespace TaoMobs {
 			s.Constitution = 10+MobRollHelper.roll(2, 4);
 			s.Charisma = MobRollHelper.roll(1, 4);
 			s.Speed = 30;
-			s.AC = 13+(s.Dexterity-10)/2;
+			s.AC = 13+Convert.ToInt32(Math.Floor((s.Dexterity-10.0)/2.0));
 			s.HP = MobRollHelper.addHp(this, startHP, HPDice, 1);
 		}
 

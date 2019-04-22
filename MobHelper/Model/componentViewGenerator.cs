@@ -1,4 +1,4 @@
-
+using MobHelper.UI.ComponentView.MobStats;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +9,8 @@ namespace MobHelper.Model {
 
 		public componentViewGenerator() { }
 
-		public IComponentView generate(IComponent comp) {
-			// TODO implement here
-			return null;
-		}
+		public IComponentView generate(IComponent comp) => comp.visit(this);
+		
 
 		public IComponentView generate(Inventory comp) {
 			// TODO implement here
@@ -22,6 +20,10 @@ namespace MobHelper.Model {
 		public IComponentView generate(HarvestTable comp) {
 			// TODO implement here
 			return null;
+		}
+
+		public IComponentView generate(MobStats comp) {
+			return new MobStatsView(comp);
 		}
 
 	}

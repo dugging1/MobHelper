@@ -52,6 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\ComponentView\MobStats\MobStatsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ComponentView\MobStats\MobStatsControl.Designer.cs">
+      <DependentUpon>MobStatsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ComponentView\MobStats\MobStatsView.cs" />
     <Compile Include="UI\MobDisplayBlock.cs" />
     <Compile Include="Model\componentViewGenerator.cs" />
     <Compile Include="Model\HarvestEntry.cs" />
@@ -102,6 +109,9 @@
     <Compile Include="UI\MobRollerBtnPanel.Designer.cs">
       <DependentUpon>MobRollerBtnPanel.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\ComponentView\MobStats\MobStatsControl.resx">
+      <DependentUpon>MobStatsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -120,6 +130,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\MobForm.resx">
+      <DependentUpon>MobForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -139,8 +152,6 @@
       <Name>CustomTabControl</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mobs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
