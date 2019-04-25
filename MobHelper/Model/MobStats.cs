@@ -1,3 +1,4 @@
+using MobHelper.UI.ComponentView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,7 +67,10 @@ namespace MobHelper.Model {
 			get { return "The stats of the mob."; }
 		}
 
-		public IComponentView visit(componentViewGenerator gen) {
+		protected componentViewFactory gen = new componentViewFactory();
+		public componentViewFactory Generator { get { return gen; } }
+
+		public IComponentView visit(componentViewFactory gen) {
 			return gen.generate(this);
 		}
 	}

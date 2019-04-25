@@ -1,4 +1,5 @@
 
+using MobHelper.UI.ComponentView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,9 @@ namespace MobHelper.Model {
 		public string Name { get; }
 		public string Description { get; }
 
-		public IComponentView visit(componentViewGenerator gen) => gen.generate(this);
+		protected componentViewFactory gen = new componentViewFactory();
+		public componentViewFactory Generator { get => gen; }
+
+		public IComponentView visit(componentViewFactory gen) => gen.generate(this);
 	}
 }

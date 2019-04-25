@@ -31,10 +31,11 @@
 			// 
 			// 
 			// 
-			this.ComponentTabs.DisplayStyleProvider.BorderColor = System.Drawing.SystemColors.ControlDark;
-			this.ComponentTabs.DisplayStyleProvider.BorderColorHot = System.Drawing.SystemColors.ControlDark;
-			this.ComponentTabs.DisplayStyleProvider.BorderColorSelected = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(157)))), ((int)(((byte)(185)))));
-			this.ComponentTabs.DisplayStyleProvider.CloserColor = System.Drawing.Color.DarkGray;
+			this.ComponentTabs.DisplayStyleProvider.BorderColor = System.Drawing.Color.Black;
+			this.ComponentTabs.DisplayStyleProvider.BorderColorHot = System.Drawing.Color.Black;
+			this.ComponentTabs.DisplayStyleProvider.BorderColorSelected = System.Drawing.Color.Black;
+			this.ComponentTabs.DisplayStyleProvider.CloserColor = System.Drawing.Color.Black;
+			this.ComponentTabs.DisplayStyleProvider.FocusColor = System.Drawing.Color.Black;
 			this.ComponentTabs.DisplayStyleProvider.FocusTrack = true;
 			this.ComponentTabs.DisplayStyleProvider.HotTrack = true;
 			this.ComponentTabs.DisplayStyleProvider.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -43,8 +44,8 @@
 			this.ComponentTabs.DisplayStyleProvider.Padding = new System.Drawing.Point(6, 3);
 			this.ComponentTabs.DisplayStyleProvider.Radius = 2;
 			this.ComponentTabs.DisplayStyleProvider.ShowTabCloser = false;
-			this.ComponentTabs.DisplayStyleProvider.TextColor = System.Drawing.SystemColors.ControlText;
-			this.ComponentTabs.DisplayStyleProvider.TextColorDisabled = System.Drawing.SystemColors.ControlDark;
+			this.ComponentTabs.DisplayStyleProvider.TextColor = System.Drawing.Color.Black;
+			this.ComponentTabs.DisplayStyleProvider.TextColorDisabled = System.Drawing.SystemColors.ControlText;
 			this.ComponentTabs.DisplayStyleProvider.TextColorSelected = System.Drawing.SystemColors.ControlText;
 			this.ComponentTabs.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.ComponentTabs.HotTrack = true;
@@ -58,6 +59,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(800, 450);
 			this.Controls.Add(this.ComponentTabs);
 			this.Name = "MobForm";

@@ -8,17 +8,17 @@ using System.Windows.Forms;
 
 namespace MobHelper.UI.ComponentView.MobStats {
 	public class MobStatsView : IComponentView {
+		public TabPage TP { get; private set; }
+		private readonly Model.MobStats ms;
+		public IComponent Component { get => ms; }
+
 		public MobStatsView(Model.MobStats ms) {
 			this.ms = ms;
-			TP = new TabPage();
-			MobStatsControl msc = new MobStatsControl(ms);
-			msc.Parent = TP;
-			msc.Dock = DockStyle.Fill;
+			TP = new TabPage {
+				BackColor = System.Drawing.Color.Black,
+				Text = "Stats"
+			};
+			MobStatsControl msc = new MobStatsControl(ms) { Parent = TP };
 		}
-
-		public TabPage TP { get; private set; }
-
-		private Model.MobStats ms;
-		public IComponent Component { get { return ms; } }
 	}
 }

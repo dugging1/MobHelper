@@ -54,6 +54,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
+			this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.label1.Location = new System.Drawing.Point(3, 7);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(22, 13);
@@ -62,15 +63,19 @@
 			// 
 			// HP
 			// 
+			this.HP.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.HP.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.HP.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.HP.Location = new System.Drawing.Point(31, 4);
 			this.HP.Name = "HP";
 			this.HP.ReadOnly = true;
-			this.HP.Size = new System.Drawing.Size(48, 20);
+			this.HP.Size = new System.Drawing.Size(48, 13);
 			this.HP.TabIndex = 1;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
+			this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.label2.Location = new System.Drawing.Point(85, 7);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(21, 13);
@@ -79,15 +84,19 @@
 			// 
 			// AC
 			// 
+			this.AC.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.AC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.AC.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.AC.Location = new System.Drawing.Point(112, 4);
 			this.AC.Name = "AC";
 			this.AC.ReadOnly = true;
-			this.AC.Size = new System.Drawing.Size(42, 20);
+			this.AC.Size = new System.Drawing.Size(42, 13);
 			this.AC.TabIndex = 3;
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
+			this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.label3.Location = new System.Drawing.Point(161, 6);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(38, 13);
@@ -96,10 +105,13 @@
 			// 
 			// Speed
 			// 
+			this.Speed.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.Speed.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.Speed.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.Speed.Location = new System.Drawing.Point(205, 3);
 			this.Speed.Name = "Speed";
 			this.Speed.ReadOnly = true;
-			this.Speed.Size = new System.Drawing.Size(39, 20);
+			this.Speed.Size = new System.Drawing.Size(39, 13);
 			this.Speed.TabIndex = 5;
 			// 
 			// groupBox1
@@ -122,6 +134,7 @@
 			this.groupBox1.Controls.Add(this.label6);
 			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.label4);
+			this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.groupBox1.Location = new System.Drawing.Point(0, 24);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(287, 94);
@@ -131,80 +144,108 @@
 			// 
 			// ChaMod
 			// 
+			this.ChaMod.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.ChaMod.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.ChaMod.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.ChaMod.Location = new System.Drawing.Point(251, 67);
 			this.ChaMod.Name = "ChaMod";
 			this.ChaMod.ReadOnly = true;
-			this.ChaMod.Size = new System.Drawing.Size(28, 20);
+			this.ChaMod.Size = new System.Drawing.Size(28, 13);
 			this.ChaMod.TabIndex = 17;
 			// 
 			// WisMod
 			// 
-			this.WisMod.Location = new System.Drawing.Point(251, 41);
+			this.WisMod.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.WisMod.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.WisMod.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.WisMod.Location = new System.Drawing.Point(251, 42);
 			this.WisMod.Name = "WisMod";
 			this.WisMod.ReadOnly = true;
-			this.WisMod.Size = new System.Drawing.Size(28, 20);
+			this.WisMod.Size = new System.Drawing.Size(28, 13);
 			this.WisMod.TabIndex = 16;
 			// 
 			// IntMod
 			// 
+			this.IntMod.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.IntMod.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.IntMod.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.IntMod.Location = new System.Drawing.Point(251, 15);
 			this.IntMod.Name = "IntMod";
 			this.IntMod.ReadOnly = true;
-			this.IntMod.Size = new System.Drawing.Size(28, 20);
+			this.IntMod.Size = new System.Drawing.Size(28, 13);
 			this.IntMod.TabIndex = 15;
 			// 
 			// ChaScore
 			// 
+			this.ChaScore.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.ChaScore.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.ChaScore.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.ChaScore.Location = new System.Drawing.Point(213, 68);
 			this.ChaScore.Name = "ChaScore";
 			this.ChaScore.ReadOnly = true;
-			this.ChaScore.Size = new System.Drawing.Size(31, 20);
+			this.ChaScore.Size = new System.Drawing.Size(31, 13);
 			this.ChaScore.TabIndex = 14;
 			// 
 			// WisScore
 			// 
+			this.WisScore.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.WisScore.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.WisScore.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.WisScore.Location = new System.Drawing.Point(213, 42);
 			this.WisScore.Name = "WisScore";
 			this.WisScore.ReadOnly = true;
-			this.WisScore.Size = new System.Drawing.Size(31, 20);
+			this.WisScore.Size = new System.Drawing.Size(31, 13);
 			this.WisScore.TabIndex = 13;
 			// 
 			// IntScore
 			// 
+			this.IntScore.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.IntScore.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.IntScore.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.IntScore.Location = new System.Drawing.Point(213, 16);
 			this.IntScore.Name = "IntScore";
 			this.IntScore.ReadOnly = true;
-			this.IntScore.Size = new System.Drawing.Size(31, 20);
+			this.IntScore.Size = new System.Drawing.Size(31, 13);
 			this.IntScore.TabIndex = 12;
 			// 
 			// ConMod
 			// 
-			this.ConMod.Location = new System.Drawing.Point(119, 66);
+			this.ConMod.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.ConMod.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.ConMod.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.ConMod.Location = new System.Drawing.Point(119, 68);
 			this.ConMod.Name = "ConMod";
 			this.ConMod.ReadOnly = true;
-			this.ConMod.Size = new System.Drawing.Size(28, 20);
+			this.ConMod.Size = new System.Drawing.Size(28, 13);
 			this.ConMod.TabIndex = 11;
 			// 
 			// DexMod
 			// 
+			this.DexMod.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.DexMod.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.DexMod.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.DexMod.Location = new System.Drawing.Point(119, 40);
 			this.DexMod.Name = "DexMod";
 			this.DexMod.ReadOnly = true;
-			this.DexMod.Size = new System.Drawing.Size(28, 20);
+			this.DexMod.Size = new System.Drawing.Size(28, 13);
 			this.DexMod.TabIndex = 10;
 			// 
 			// StrMod
 			// 
+			this.StrMod.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.StrMod.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.StrMod.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.StrMod.Location = new System.Drawing.Point(119, 14);
 			this.StrMod.Name = "StrMod";
 			this.StrMod.ReadOnly = true;
-			this.StrMod.Size = new System.Drawing.Size(28, 20);
+			this.StrMod.Size = new System.Drawing.Size(28, 13);
 			this.StrMod.TabIndex = 9;
 			// 
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(157, 73);
+			this.label9.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.label9.Location = new System.Drawing.Point(157, 67);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(50, 13);
 			this.label9.TabIndex = 8;
@@ -213,7 +254,8 @@
 			// label8
 			// 
 			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(154, 48);
+			this.label8.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.label8.Location = new System.Drawing.Point(161, 42);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(45, 13);
 			this.label8.TabIndex = 7;
@@ -222,6 +264,7 @@
 			// label7
 			// 
 			this.label7.AutoSize = true;
+			this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.label7.Location = new System.Drawing.Point(154, 18);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(59, 13);
@@ -230,32 +273,42 @@
 			// 
 			// ConScore
 			// 
-			this.ConScore.Location = new System.Drawing.Point(81, 67);
+			this.ConScore.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.ConScore.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.ConScore.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.ConScore.Location = new System.Drawing.Point(81, 68);
 			this.ConScore.Name = "ConScore";
 			this.ConScore.ReadOnly = true;
-			this.ConScore.Size = new System.Drawing.Size(31, 20);
+			this.ConScore.Size = new System.Drawing.Size(31, 13);
 			this.ConScore.TabIndex = 5;
 			// 
 			// DexScore
 			// 
+			this.DexScore.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.DexScore.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.DexScore.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.DexScore.Location = new System.Drawing.Point(81, 41);
 			this.DexScore.Name = "DexScore";
 			this.DexScore.ReadOnly = true;
-			this.DexScore.Size = new System.Drawing.Size(31, 20);
+			this.DexScore.Size = new System.Drawing.Size(31, 13);
 			this.DexScore.TabIndex = 4;
 			// 
 			// StrScore
 			// 
+			this.StrScore.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.StrScore.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.StrScore.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.StrScore.Location = new System.Drawing.Point(81, 15);
 			this.StrScore.Name = "StrScore";
 			this.StrScore.ReadOnly = true;
-			this.StrScore.Size = new System.Drawing.Size(31, 20);
+			this.StrScore.Size = new System.Drawing.Size(31, 13);
 			this.StrScore.TabIndex = 3;
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(3, 72);
+			this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
+			this.label6.Location = new System.Drawing.Point(3, 67);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(64, 13);
 			this.label6.TabIndex = 2;
@@ -264,6 +317,7 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
+			this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.label5.Location = new System.Drawing.Point(3, 48);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(48, 13);
@@ -273,6 +327,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
+			this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.label4.Location = new System.Drawing.Point(7, 22);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(47, 13);
@@ -283,6 +338,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.Speed);
 			this.Controls.Add(this.label3);

@@ -1,4 +1,5 @@
 
+using MobHelper.UI.ComponentView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +9,13 @@ namespace MobHelper.Model {
 	public class Inventory : IComponent {
 		public HashSet<IItem> InventorySet = new HashSet<IItem>();
 
-		public string Name { get { return "Inventory"; } }
+		public string Name { get => "Inventory"; }
 
-		public string Description { get; }
+		public string Description { get => "A creature's inventory."; }
 
-		public IComponentView visit(componentViewGenerator gen) {
-			return gen.generate(this);
-		}
+		protected componentViewFactory gen = new componentViewFactory();
+		public componentViewFactory Generator { get => gen; }
+
+		public IComponentView visit(componentViewFactory gen) => gen.generate(this);
 	}
 }

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CBF19883-802C-4015-BDB5-294BAC5CB85B}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>TaoHelper</RootNamespace>
-    <AssemblyName>TaoHelper</AssemblyName>
+    <RootNamespace>MobHelper</RootNamespace>
+    <AssemblyName>MobHelper</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,9 +32,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'TaoHelperExport|AnyCPU'">
     <OutputPath>bin\TaoHelperExport\</OutputPath>
+    <LangVersion>7.2</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -52,6 +55,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\ComponentView\HarvestTable\HarvestEntryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ComponentView\HarvestTable\HarvestEntryControl.Designer.cs">
+      <DependentUpon>HarvestEntryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ComponentView\HarvestTable\HarvestTableControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ComponentView\HarvestTable\HarvestTableControl.Designer.cs">
+      <DependentUpon>HarvestTableControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ComponentView\HarvestTable\HarvestTableView.cs" />
+    <Compile Include="UI\ComponentView\Inventory\IItemViewFactory.cs" />
+    <Compile Include="UI\ComponentView\Inventory\InventoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ComponentView\Inventory\InventoryControl.Designer.cs">
+      <DependentUpon>InventoryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ComponentView\Inventory\InventoryView.cs" />
     <Compile Include="UI\ComponentView\MobStats\MobStatsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -60,11 +84,11 @@
     </Compile>
     <Compile Include="UI\ComponentView\MobStats\MobStatsView.cs" />
     <Compile Include="UI\MobDisplayBlock.cs" />
-    <Compile Include="Model\componentViewGenerator.cs" />
+    <Compile Include="UI\ComponentView\componentViewGenerator.cs" />
     <Compile Include="Model\HarvestEntry.cs" />
     <Compile Include="Model\HarvestTable.cs" />
     <Compile Include="Model\IComponent.cs" />
-    <Compile Include="Model\IComponentView.cs" />
+    <Compile Include="UI\ComponentView\IComponentView.cs" />
     <Compile Include="Model\IItem.cs" />
     <Compile Include="Model\IMob.cs" />
     <Compile Include="Model\IMobAction.cs" />
@@ -109,6 +133,15 @@
     <Compile Include="UI\MobRollerBtnPanel.Designer.cs">
       <DependentUpon>MobRollerBtnPanel.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\ComponentView\HarvestTable\HarvestEntryControl.resx">
+      <DependentUpon>HarvestEntryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ComponentView\HarvestTable\HarvestTableControl.resx">
+      <DependentUpon>HarvestTableControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ComponentView\Inventory\InventoryControl.resx">
+      <DependentUpon>InventoryControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\ComponentView\MobStats\MobStatsControl.resx">
       <DependentUpon>MobStatsControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +162,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UI\MobForm.resx">
       <DependentUpon>MobForm.cs</DependentUpon>

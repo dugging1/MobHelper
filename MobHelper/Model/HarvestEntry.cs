@@ -1,4 +1,4 @@
-
+using MobHelper.UI.ComponentView.HarvestTable;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +11,8 @@ namespace MobHelper.Model {
 
 		public IItem Item;
 		public int DC;
-		public IRollAction ResultRoll;
-
-
+		public Dictionary<string, IRollAction> ResultRolls;
+		public HarvestEntryControlFactory Factory;
 
 	}
 }

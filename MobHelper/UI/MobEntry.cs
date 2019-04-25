@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using MobHelper.Model;
 
@@ -27,5 +28,16 @@ namespace MobHelper.UI {
 		public Color ForeColour { get; set; }
 
 		public IMob Mob { get; set; }
+
+		private void button1_Click(object sender, System.EventArgs e) {
+			Thread t = new Thread(new ParameterizedThreadStart(newMobForm));
+			t.Start(Mob);
+		}
+
+		private void newMobForm(object m) {
+			Application.EnableVisualStyles();
+			Application.SetCompatibleTextRenderingDefault(false);
+			Application.Run(new MobForm((IMob)m));
+		}
 	}
 }

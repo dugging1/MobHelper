@@ -57,13 +57,12 @@
 			// ClearMobs
 			// 
 			this.ClearMobs.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-			this.ClearMobs.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.ClearMobs.FlatAppearance.BorderSize = 0;
 			this.ClearMobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.ClearMobs.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.ClearMobs.Location = new System.Drawing.Point(0, 0);
+			this.ClearMobs.Location = new System.Drawing.Point(3, 3);
 			this.ClearMobs.Name = "ClearMobs";
-			this.ClearMobs.Size = new System.Drawing.Size(191, 33);
+			this.ClearMobs.Size = new System.Drawing.Size(196, 30);
 			this.ClearMobs.TabIndex = 1;
 			this.ClearMobs.Text = "Clear Mobs";
 			this.ClearMobs.UseVisualStyleBackColor = false;
@@ -197,6 +196,7 @@
 			// InitTrackSPanel
 			// 
 			this.InitTrackSPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.InitTrackSPanel.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
 			this.InitTrackSPanel.Location = new System.Drawing.Point(3, 3);
 			this.InitTrackSPanel.Name = "InitTrackSPanel";
 			// 
@@ -233,6 +233,7 @@
 			// MobRollerSplitLR
 			// 
 			this.MobRollerSplitLR.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.MobRollerSplitLR.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
 			this.MobRollerSplitLR.Location = new System.Drawing.Point(3, 3);
 			this.MobRollerSplitLR.Name = "MobRollerSplitLR";
 			// 
@@ -244,7 +245,7 @@
 			// 
 			this.MobRollerSplitLR.Panel2.Controls.Add(this.MobRollerSplitBtnsTB);
 			this.MobRollerSplitLR.Size = new System.Drawing.Size(965, 550);
-			this.MobRollerSplitLR.SplitterDistance = 770;
+			this.MobRollerSplitLR.SplitterDistance = 757;
 			this.MobRollerSplitLR.TabIndex = 0;
 			// 
 			// MobPanelDock
@@ -253,12 +254,13 @@
 			this.MobPanelDock.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.MobPanelDock.Location = new System.Drawing.Point(0, 0);
 			this.MobPanelDock.Name = "MobPanelDock";
-			this.MobPanelDock.Size = new System.Drawing.Size(770, 550);
+			this.MobPanelDock.Size = new System.Drawing.Size(757, 550);
 			this.MobPanelDock.TabIndex = 1;
 			// 
 			// MobRollerSplitBtnsTB
 			// 
 			this.MobRollerSplitBtnsTB.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.MobRollerSplitBtnsTB.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
 			this.MobRollerSplitBtnsTB.Location = new System.Drawing.Point(0, 0);
 			this.MobRollerSplitBtnsTB.Name = "MobRollerSplitBtnsTB";
 			this.MobRollerSplitBtnsTB.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -266,7 +268,7 @@
 			// MobRollerSplitBtnsTB.Panel1
 			// 
 			this.MobRollerSplitBtnsTB.Panel1.Controls.Add(this.ClearMobs);
-			this.MobRollerSplitBtnsTB.Size = new System.Drawing.Size(191, 550);
+			this.MobRollerSplitBtnsTB.Size = new System.Drawing.Size(204, 550);
 			this.MobRollerSplitBtnsTB.SplitterDistance = 33;
 			this.MobRollerSplitBtnsTB.TabIndex = 0;
 			// 

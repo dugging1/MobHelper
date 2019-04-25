@@ -11,11 +11,13 @@ using System.Windows.Forms;
 
 namespace MobHelper.UI {
 	public partial class MobForm : Form {
-		private IMob Mob { get; set; }
+		protected IMob Mob { get; set; }
 
 		public MobForm(IMob mob) {
 			InitializeComponent();
 			Mob = mob;
+			ComponentTabs.TabPages.AddRange(Mob.Components.Select(x => x.Generator.generate(x)).Select(x => x.TP).ToArray());
+			Text = "Mob - "+Mob.Name+" ("+Mob.Number+")";
 		}
 	}
 }
