@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using MobHelper.Model;
@@ -38,6 +39,24 @@ namespace MobHelper.UI {
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MobForm((IMob)m));
+		}
+
+		private void mobType_TextChanged(object sender, EventArgs e) {
+			try {
+				TextBox t = (TextBox)sender;
+				Mob = Mob.changeName(t.Text);
+			} catch (InvalidCastException) { }
+		}
+
+		private void mobNumber_TextChanged(object sender, EventArgs e) {
+			try {
+				TextBox t = (TextBox)sender;
+				Mob = Mob.changeNumber(Convert.ToInt32(t.Text));
+			} catch (InvalidCastException) {
+			} catch (FormatException) {
+				TextBox t = (TextBox)sender;
+				t.Text = Mob.Number.ToString();
+			}
 		}
 	}
 }

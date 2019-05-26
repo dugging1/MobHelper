@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using MobHelper.Model;
 namespace TaoMobs {
 	class NightmareCrow:TaoMob {
 		public NightmareCrow() : base() {
+			Name = "Nightmare Crow";
 			IStats s = (IStats)getComponent(typeof(IStats));
 			s.Strength = 10+MobRollHelper.roll(1, 4)/2;
 			s.Dexterity = 10+MobRollHelper.roll(2, 4);
@@ -20,7 +22,12 @@ namespace TaoMobs {
 			s.HP = MobRollHelper.addHp(this, startHP, HPDice, 1);
 		}
 
-		public override string Name { get { return "Nightmare Crow"; } }
+		public NightmareCrow(string name, int num, ImmutableHashSet<IComponent> comps) : this() {
+			Name = name;
+			Number = num;
+			Components = comps;
+		}
+		public override IMob New(string name, int number, ImmutableHashSet<IComponent> comps) => new NightmareCrow(name, number, comps);
 
 		protected int startHP { get { return 10; } }
 		protected int HPDice { get { return 6; } }

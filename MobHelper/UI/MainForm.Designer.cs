@@ -62,7 +62,7 @@
 			this.ClearMobs.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.ClearMobs.Location = new System.Drawing.Point(3, 3);
 			this.ClearMobs.Name = "ClearMobs";
-			this.ClearMobs.Size = new System.Drawing.Size(196, 30);
+			this.ClearMobs.Size = new System.Drawing.Size(166, 30);
 			this.ClearMobs.TabIndex = 1;
 			this.ClearMobs.Text = "Clear Mobs";
 			this.ClearMobs.UseVisualStyleBackColor = false;
@@ -281,9 +281,8 @@
 			this.Controls.Add(this.Tabs);
 			this.DoubleBuffered = true;
 			this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "MainForm";
-			this.Text = "Tao Helper";
+			this.Text = "Mob Helper";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.ResizeBegin += new System.EventHandler(this.Form1_ResizeBegin);
 			this.ResizeEnd += new System.EventHandler(this.Form1_ResizeEnd);

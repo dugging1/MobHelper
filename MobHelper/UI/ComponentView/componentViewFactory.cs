@@ -1,4 +1,5 @@
 using MobHelper.Model;
+using MobHelper.UI.ComponentView.HarvestTable;
 using MobHelper.UI.ComponentView.Inventory;
 using MobHelper.UI.ComponentView.MobStats;
 using System;
@@ -12,7 +13,7 @@ namespace MobHelper.UI.ComponentView {
 
 		public virtual IComponentView generate(Model.Inventory comp) => new InventoryView(comp);
 
-		public virtual IComponentView generate(Model.HarvestTable comp) => null;
+		public virtual IComponentView generate(Model.HarvestTable comp) => new HarvestTableView(comp);
 
 		public virtual IComponentView generate(Model.MobStats comp) =>  new MobStatsView(comp);
 

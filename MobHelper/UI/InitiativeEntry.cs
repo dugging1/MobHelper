@@ -11,7 +11,8 @@ namespace MobHelper.UI {
 			IStats stats = (IStats)ms.getComponent(typeof(IStats));
 
 			InitializeComponent();
-			EntryName.Text = ms.Name + " " + ms.Number.ToString();
+			EntryName.Text = ms.Name;
+			EntryNumber.Text = ms.Number.ToString();
 			int initiative = MobRollHelper.roll(1, 20)+Convert.ToInt32(Math.Floor((stats.Dexterity-10.0)/2.0));
 			EntryInitiative.Text = initiative.ToString();
 			remDel = rem;

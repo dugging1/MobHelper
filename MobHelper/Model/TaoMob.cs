@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 
@@ -8,15 +9,14 @@ namespace MobHelper.Model {
 	public abstract class TaoMob : IMob {
 
 		public TaoMob() {
-			Components = new HashSet<IComponent>();
-			Components.Add(new MobStats());
+			Components = ImmutableHashSet.Create<IComponent>(new MobStats());
 		}
 
 		public float OAPoints { get { return MobRollHelper.calcOAPoints(this); } }
 
-		public abstract string Name { get; }
+		public virtual string Name { get; protected set; }
 		public virtual int Number { get; set; }
-		public virtual HashSet<IComponent> Components { get; protected set; }
+		public virtual ImmutableHashSet<IComponent> Components { get; protected set; }
 
 		public IComponent getComponent(Type t) {
 			foreach (IComponent component in Components) {
@@ -25,5 +25,7 @@ namespace MobHelper.Model {
 			}
 			throw new KeyNotFoundException("Component not found.");
 		}
+
+		public abstract IMob New(string name, int number, ImmutableHashSet<IComponent> comps);
 	}
 }

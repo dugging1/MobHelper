@@ -24,6 +24,7 @@
 		/// </summary>
 		private void InitializeComponent() {
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.button1 = new System.Windows.Forms.Button();
 			this.AC = new System.Windows.Forms.TextBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.mobNumber = new System.Windows.Forms.TextBox();
@@ -43,7 +44,6 @@
 			this.Con = new System.Windows.Forms.TextBox();
 			this.Cha = new System.Windows.Forms.TextBox();
 			this.Hp = new System.Windows.Forms.TextBox();
-			this.button1 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
@@ -73,6 +73,20 @@
 			this.splitContainer1.SplitterDistance = 25;
 			this.splitContainer1.TabIndex = 0;
 			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.Black;
+			this.button1.FlatAppearance.BorderSize = 0;
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+			this.button1.Location = new System.Drawing.Point(341, 0);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(53, 22);
+			this.button1.TabIndex = 4;
+			this.button1.Text = "More";
+			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
+			// 
 			// AC
 			// 
 			this.AC.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -101,9 +115,9 @@
 			this.mobNumber.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.mobNumber.Location = new System.Drawing.Point(112, 4);
 			this.mobNumber.Name = "mobNumber";
-			this.mobNumber.ReadOnly = true;
 			this.mobNumber.Size = new System.Drawing.Size(51, 13);
 			this.mobNumber.TabIndex = 1;
+			this.mobNumber.TextChanged += new System.EventHandler(this.mobNumber_TextChanged);
 			// 
 			// mobType
 			// 
@@ -112,9 +126,9 @@
 			this.mobType.ForeColor = System.Drawing.SystemColors.ControlLight;
 			this.mobType.Location = new System.Drawing.Point(6, 4);
 			this.mobType.Name = "mobType";
-			this.mobType.ReadOnly = true;
 			this.mobType.Size = new System.Drawing.Size(100, 13);
 			this.mobType.TabIndex = 0;
+			this.mobType.TextChanged += new System.EventHandler(this.mobType_TextChanged);
 			// 
 			// tableLayoutPanel1
 			// 
@@ -125,7 +139,7 @@
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63F));
 			this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.label2, 1, 0);
 			this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
@@ -163,7 +177,7 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.label2.Location = new System.Drawing.Point(53, 0);
+			this.label2.Location = new System.Drawing.Point(52, 0);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(26, 13);
 			this.label2.TabIndex = 1;
@@ -173,7 +187,7 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.label3.Location = new System.Drawing.Point(107, 0);
+			this.label3.Location = new System.Drawing.Point(105, 0);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(19, 13);
 			this.label3.TabIndex = 2;
@@ -183,7 +197,7 @@
 			// 
 			this.label4.AutoSize = true;
 			this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.label4.Location = new System.Drawing.Point(167, 0);
+			this.label4.Location = new System.Drawing.Point(165, 0);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(25, 13);
 			this.label4.TabIndex = 3;
@@ -193,7 +207,7 @@
 			// 
 			this.label5.AutoSize = true;
 			this.label5.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.label5.Location = new System.Drawing.Point(226, 0);
+			this.label5.Location = new System.Drawing.Point(224, 0);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(26, 13);
 			this.label5.TabIndex = 4;
@@ -203,7 +217,7 @@
 			// 
 			this.label6.AutoSize = true;
 			this.label6.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.label6.Location = new System.Drawing.Point(282, 0);
+			this.label6.Location = new System.Drawing.Point(280, 0);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(26, 13);
 			this.label6.TabIndex = 5;
@@ -213,7 +227,7 @@
 			// 
 			this.label7.AutoSize = true;
 			this.label7.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.label7.Location = new System.Drawing.Point(338, 0);
+			this.label7.Location = new System.Drawing.Point(336, 0);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(21, 13);
 			this.label7.TabIndex = 6;
@@ -227,7 +241,7 @@
 			this.Str.Location = new System.Drawing.Point(3, 20);
 			this.Str.Name = "Str";
 			this.Str.ReadOnly = true;
-			this.Str.Size = new System.Drawing.Size(44, 13);
+			this.Str.Size = new System.Drawing.Size(43, 13);
 			this.Str.TabIndex = 7;
 			// 
 			// Dex
@@ -235,10 +249,10 @@
 			this.Dex.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.Dex.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.Dex.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.Dex.Location = new System.Drawing.Point(53, 20);
+			this.Dex.Location = new System.Drawing.Point(52, 20);
 			this.Dex.Name = "Dex";
 			this.Dex.ReadOnly = true;
-			this.Dex.Size = new System.Drawing.Size(48, 13);
+			this.Dex.Size = new System.Drawing.Size(47, 13);
 			this.Dex.TabIndex = 8;
 			// 
 			// Int
@@ -246,7 +260,7 @@
 			this.Int.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.Int.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.Int.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.Int.Location = new System.Drawing.Point(107, 20);
+			this.Int.Location = new System.Drawing.Point(105, 20);
 			this.Int.Name = "Int";
 			this.Int.ReadOnly = true;
 			this.Int.Size = new System.Drawing.Size(54, 13);
@@ -257,7 +271,7 @@
 			this.Wis.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.Wis.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.Wis.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.Wis.Location = new System.Drawing.Point(167, 20);
+			this.Wis.Location = new System.Drawing.Point(165, 20);
 			this.Wis.Name = "Wis";
 			this.Wis.ReadOnly = true;
 			this.Wis.Size = new System.Drawing.Size(53, 13);
@@ -268,7 +282,7 @@
 			this.Con.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.Con.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.Con.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.Con.Location = new System.Drawing.Point(226, 20);
+			this.Con.Location = new System.Drawing.Point(224, 20);
 			this.Con.Name = "Con";
 			this.Con.ReadOnly = true;
 			this.Con.Size = new System.Drawing.Size(50, 13);
@@ -279,7 +293,7 @@
 			this.Cha.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.Cha.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.Cha.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.Cha.Location = new System.Drawing.Point(282, 20);
+			this.Cha.Location = new System.Drawing.Point(280, 20);
 			this.Cha.Name = "Cha";
 			this.Cha.ReadOnly = true;
 			this.Cha.Size = new System.Drawing.Size(50, 13);
@@ -290,24 +304,10 @@
 			this.Hp.BackColor = System.Drawing.SystemColors.ControlDarkDark;
 			this.Hp.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.Hp.ForeColor = System.Drawing.SystemColors.ControlLight;
-			this.Hp.Location = new System.Drawing.Point(338, 20);
+			this.Hp.Location = new System.Drawing.Point(336, 20);
 			this.Hp.Name = "Hp";
 			this.Hp.Size = new System.Drawing.Size(48, 13);
 			this.Hp.TabIndex = 13;
-			// 
-			// button1
-			// 
-			this.button1.BackColor = System.Drawing.Color.Black;
-			this.button1.FlatAppearance.BorderSize = 0;
-			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-			this.button1.Location = new System.Drawing.Point(341, 0);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(53, 22);
-			this.button1.TabIndex = 4;
-			this.button1.Text = "More";
-			this.button1.UseVisualStyleBackColor = false;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// MobEntry
 			// 

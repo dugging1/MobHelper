@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,7 @@ using MobHelper.Model;
 namespace TaoMobs {
     class DeathBeetle : TaoMob {
 		public DeathBeetle():base() {
+			Name = "Death beetle";
 			IStats s = (IStats)getComponent(typeof(IStats));
 			s.Strength = 2+MobRollHelper.roll(4, 5);
 			s.Dexterity = 4+MobRollHelper.roll(1, 6);
@@ -19,10 +21,12 @@ namespace TaoMobs {
 			s.AC = 10+Convert.ToInt32(Math.Floor((s.Dexterity-10.0)/2.0));
 			s.HP = MobRollHelper.addHp(this, startHP, HPDice, NumHPDice);
 		}
-
-		public override string Name {
-			get { return "Death beetle"; }
+		public DeathBeetle(string name, int num, ImmutableHashSet<IComponent> comps) : this() {
+			Name = name;
+			Number = num;
+			Components = comps;
 		}
+		public override IMob New(string name, int number, ImmutableHashSet<IComponent> comps) => new DeathBeetle(name, number, comps);
 
 		protected int startHP { get { return 2; } }
         protected int HPDice { get { return 2; } }
