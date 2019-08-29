@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.106
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29201.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobHelper", "MobHelper\MobHelper.csproj", "{CBF19883-802C-4015-BDB5-294BAC5CB85B}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomTabControl", "CustomTabControl\CustomTabControl.csproj", "{4DBFE2CF-45E4-4594-8E6A-5EBC2EEF85AE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobHelperDemo", "MobHelperDemo\MobHelperDemo.csproj", "{296F0BAF-9006-4A99-91FF-19DBD4DB25A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrimsonBloodlineMobs", "CrimsonBloodlineMobs\CrimsonBloodlineMobs.csproj", "{C6856D8D-59F7-47D9-84FF-2909916B7950}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,14 @@ Global
 		{296F0BAF-9006-4A99-91FF-19DBD4DB25A7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{296F0BAF-9006-4A99-91FF-19DBD4DB25A7}.Release|x86.ActiveCfg = Release|Any CPU
 		{296F0BAF-9006-4A99-91FF-19DBD4DB25A7}.Release|x86.Build.0 = Release|Any CPU
+		{C6856D8D-59F7-47D9-84FF-2909916B7950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6856D8D-59F7-47D9-84FF-2909916B7950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6856D8D-59F7-47D9-84FF-2909916B7950}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C6856D8D-59F7-47D9-84FF-2909916B7950}.Debug|x86.Build.0 = Debug|Any CPU
+		{C6856D8D-59F7-47D9-84FF-2909916B7950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6856D8D-59F7-47D9-84FF-2909916B7950}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6856D8D-59F7-47D9-84FF-2909916B7950}.Release|x86.ActiveCfg = Release|Any CPU
+		{C6856D8D-59F7-47D9-84FF-2909916B7950}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
